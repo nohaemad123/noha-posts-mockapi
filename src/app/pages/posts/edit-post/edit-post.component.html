@@ -1,0 +1,54 @@
+<div class="content">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-5">
+          <div class="add_post_image">
+          <img src="../../../../assets/photo-1519337265831-281ec6cc8514.jpg">
+        </div>
+        </div>
+        <div class="col-md-7">
+          
+          <form #editPostForm="ngForm" (ngSubmit)="onSubmit(editPostForm)">
+            <div class="form-group">
+            <label>Post name <span style="color: #f00;">*</span>:</label>
+            <input type="text" class="form-control" placeholder="Post name" [(ngModel)]="post.postName"
+            name="postName" #postName="ngModel" required>
+            <div class="alert alert-danger" role="alert" *ngIf="postName === null || postName === ''">
+                Post name is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Your name <span style="color: #f00;">*</span>:</label>
+              <input type="text" class="form-control" placeholder="Post description" [(ngModel)]="post.postAuthor"
+              name="postAuthor" #postAuthor="ngModel" required>
+              <div class="alert alert-danger" role="alert" *ngIf="postAuthor === null || postAuthor === ''">
+                  Post author is required
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Post breif description <span style="color: #f00;">*</span>:</label>
+                <input type="text" class="form-control" placeholder="Post breif description" [(ngModel)]="post.post_brief_desc"
+                name="post_brief_desc" #post_brief_desc="ngModel" required>
+                <div class="alert alert-danger" role="alert" *ngIf="post_brief_desc === null || post_brief_desc === ''">
+                    Post author is required
+                  </div>
+                </div>
+            <div class="form-group">
+                <label>Post description <span style="color: #f00;">*</span>:</label>
+                <textarea type="text" class="form-control" placeholder="Post description" [(ngModel)]="post.postDesc"
+                name="postDesc" #postDesc="ngModel" required></textarea>
+                <div class="alert alert-danger" role="alert" *ngIf="postDesc === null || postDesc === ''">
+                    Post description is required
+                  </div>
+                </div>
+             
+                <input type="submit" value="Save" class="save btn btn-primary" >
+
+        </form>
+        </div>
+      </div>
+    
+    </div>
+    </div>
